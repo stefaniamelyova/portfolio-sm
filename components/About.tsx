@@ -7,24 +7,24 @@ const contacts = [
     label: 'stefania.melyova@gmail.com',
     href: 'mailto:stefania.melyova@gmail.com',
     bg: 'bg-dark',
-    icon: ABOUT_IMAGES.emailIcon,
+    icon: ABOUT_IMAGES.email,
   },
   {
     label: 'linkedin.com/stefania-melyova',
     href: 'https://linkedin.com/in/stefania-melyova',
-    icon: ABOUT_IMAGES.linkedinIcon,
+    icon: ABOUT_IMAGES.linkedin,
     bg: 'bg-accent',
   },
   {
     label: 'github.com/stefaniamelyova',
     href: 'https://github.com/stefaniamelyova',
-    icon: ABOUT_IMAGES.githubIcon,
+    icon: ABOUT_IMAGES.github,
     bg: 'bg-dark',
   },
   {
     label: 'behance.net/stefaniamelyova',
     href: 'https://www.behance.net/stefaniamelyova',
-    icon: ABOUT_IMAGES.behanceIcon,
+    icon: ABOUT_IMAGES.behance,
     bg: 'bg-accent',
   },
 ]
