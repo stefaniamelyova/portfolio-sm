@@ -36,7 +36,7 @@ export default function TheProject({ media, paragraphs }: TheProjectData) {
         {/* Left: two vertical media slots */}
         <div className="flex gap-3 px-6 md:px-section py-section">
           {media.map((item, i) => (
-            <div key={i} className="flex-1 overflow-hidden min-h-[280px] lg:min-h-[380px]">
+            <div key={i} className="flex-1 overflow-hidden min-h-[180px] md:min-h-[280px] lg:min-h-[380px]">
               <MediaSlot item={item} />
             </div>
           ))}
