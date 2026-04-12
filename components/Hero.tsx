@@ -145,7 +145,7 @@ function DesktopCanvas() {
 
       {/* Name + subtitle — centered in canvas, text-top at 309px */}
       <Text top={309} size={60} weight={900}>stefania alberto</Text>
-      <Text top={360} size={25} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
+      <Text top={400} size={25} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
     </>
   )
 }
@@ -186,7 +186,7 @@ function TabletCanvas() {
       <E x={455} y={395} w={85} h={79} src={SM.decor302} />
 
       <Text top={241} size={30} weight={900}>stefania alberto</Text>
-      <Text top={271} size={13} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
+      <Text top={293} size={13} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
     </>
   )
 }
@@ -222,7 +222,7 @@ function MobileCanvas() {
       <R x={310} y={6} ow={65.1} oh={68.1} rot={51.52} iw={57} ih={37.8} src={SM.decor2505_mo} />
 
       <Text top={238} size={30} weight={900}>stefania alberto</Text>
-      <Text top={268} size={13} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
+      <Text top={290} size={13} weight={600}>student&nbsp;•&nbsp;designer&nbsp;•&nbsp;developer</Text>
     </>
   )
 }
