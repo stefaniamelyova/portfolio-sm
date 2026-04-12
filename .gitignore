@@ -45,3 +45,5 @@ CLAUDE.md
 AGENTS.md
 .claude/
 .remember/
+.playwright-mcp/
+docs/superpowers
