@@ -1,7 +1,5 @@
-import { SectionHeader, Badge, Tag, ColHeader } from './ui'
+import { SectionHeader, Badge, Tag, ColHeader, Reveal } from './ui'
 import { HERO_IMAGES } from '@/lib/assets'
-
-// ── Job card (light bg) ───────────────────────────────────────────────────────
 
 interface JobCardProps {
   date: string
@@ -31,8 +29,6 @@ function JobCard({ date, company, role, title, location, bullets }: JobCardProps
   )
 }
 
-// ── Education card (dark bg) ─────────────────────────────────────────────────
-
 interface EduCardProps {
   date: string
   title: string
@@ -55,8 +51,6 @@ function EduCard({ date, title, location, bullets }: EduCardProps) {
   )
 }
 
-// ── Section ───────────────────────────────────────────────────────────────────
-
 export default function Experience() {
   return (
     <section id="experience">
@@ -64,8 +58,7 @@ export default function Experience() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
 
-        {/* ── Left: Professional Experience ─────────────────────────── */}
-        <div className="border-r border-dark px-6 md:px-section py-6 md:py-section flex flex-col gap-6">
+        <Reveal delay={0} className="border-r border-dark px-6 md:px-section py-6 md:py-section flex flex-col gap-6">
           <ColHeader>professional experience</ColHeader>
 
           <JobCard
@@ -118,10 +111,9 @@ export default function Experience() {
               'Applied advanced technical and creative problem-solving to deliver scalable, user-centered outcomes',
             ]}
           />
-        </div>
+        </Reveal>
 
-        {/* ── Middle: Expertise / Hard Skills / Soft Skills ──────────── */}
-        <div className="border-r border-dark px-6 md:px-section lg:px-8 py-6 md:py-section flex flex-col gap-6">
+        <Reveal delay={0.15} className="border-r border-dark px-6 md:px-section lg:px-8 py-6 md:py-section flex flex-col gap-6">
           <ColHeader>expertise</ColHeader>
 
           <div className="bg-accent border border-dark p-3">
@@ -165,10 +157,9 @@ export default function Experience() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        {/* ── Right: Education ──────────────────────────────────────── */}
-        <div className="px-6 md:px-section lg:px-8 py-6 md:py-section flex flex-col gap-6">
+        <Reveal delay={0.3} className="px-6 md:px-section lg:px-8 py-6 md:py-section flex flex-col gap-6">
           <ColHeader>education</ColHeader>
 
           <EduCard
@@ -202,7 +193,7 @@ export default function Experience() {
               'Developed strong linguistic, analytical, and interpersonal skills',
             ]}
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   )

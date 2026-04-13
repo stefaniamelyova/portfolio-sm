@@ -1,6 +1,5 @@
 import type { SplitSectionData, SplitColumnData, MediaItem } from '@/lib/projects'
-
-// ── Media slot ────────────────────────────────────────────────────────────────
+import Reveal from '@/components/ui/Reveal'
 
 function MediaSlot({ item }: { item: MediaItem }) {
   if (item.type === 'video') {
@@ -26,11 +25,8 @@ function MediaSlot({ item }: { item: MediaItem }) {
   )
 }
 
-// ── Media area — single or double vertical ────────────────────────────────────
-
 function MediaArea({ media }: { media: SplitColumnData['media'] }) {
   if (Array.isArray(media)) {
-    // Two portrait images side by side
     return (
       <div className="flex gap-2 w-full aspect-[4/3]">
         {media.map((item, i) => (
@@ -48,8 +44,6 @@ function MediaArea({ media }: { media: SplitColumnData['media'] }) {
   )
 }
 
-// ── Column ────────────────────────────────────────────────────────────────────
-
 function Column({ media, title, paragraphs }: SplitColumnData) {
   return (
     <div className="flex flex-col gap-5">
@@ -66,15 +60,13 @@ function Column({ media, title, paragraphs }: SplitColumnData) {
   )
 }
 
-// ── Section ───────────────────────────────────────────────────────────────────
-
 export default function SplitSection({ left, right }: SplitSectionData) {
   return (
     <section className="relative">
       <div className="max-w-[1440px] mx-auto px-6 md:px-section py-section">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <Column {...left} />
-          <Column {...right} />
+          <Reveal direction="left"><Column {...left} /></Reveal>
+          <Reveal direction="right" delay={0.1}><Column {...right} /></Reveal>
         </div>
       </div>
     </section>

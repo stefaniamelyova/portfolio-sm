@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { ABOUT_IMAGES } from '@/lib/assets'
-import { SectionHeader, ColHeader } from './ui'
+import { SectionHeader, ColHeader, Reveal, StaggerReveal, StaggerItem } from './ui'
 
 const contacts = [
   {
@@ -44,6 +44,7 @@ export default function About() {
 
         {/* Bio box — col 1, row 1 on desktop */}
         <div className="lg:border-r border-dark">
+          <Reveal direction="left">
           <div className="border border-dark mx-6 md:mx-section mt-0 mb-8 lg:mb-10 p-6 lg:p-8">
             {/* Lemon floats right so text wraps around it */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -63,17 +64,18 @@ export default function About() {
               themselves how to code and design, but very few do it from the heart.
             </p>
           </div>
+          </Reveal>
         </div>
 
         {/* Portrait — col 2, spans both rows on desktop; appears second on mobile */}
-        <div className="lg:row-span-2 border border-dark lg:border-l-0 overflow-hidden mx-6 md:mx-section mt-0 lg:mx-0 lg:mr-section lg:w-[clamp(260px,33vw,460px)]">
+        <Reveal direction="right" className="lg:row-span-2 border border-dark lg:border-l-0 overflow-hidden mx-6 md:mx-section mt-0 lg:mx-0 lg:mr-section lg:w-[clamp(260px,33vw,460px)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={ABOUT_IMAGES.portrait}
             alt="Stefania Alberto"
             className="w-full h-full object-cover object-top min-h-[340px]"
           />
-        </div>
+        </Reveal>
 
         {/* Get in touch — col 1, row 2 on desktop; appears third (below portrait) on mobile */}
         <div className="lg:border-r border-dark px-6 md:px-section pt-6 lg:pt-2 pb-0 lg:self-end">
@@ -83,16 +85,15 @@ export default function About() {
 
       </div>
 
-      {/* Contact cards */}
       <div className="px-6 md:px-section py-section">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <StaggerReveal className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {contacts.map(({ label, href, icon, bg }) => (
+            <StaggerItem key={href}>
             <Link
-              key={href}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
-              className={`${bg} flex flex-col justify-between px-5 pt-6 pb-4 min-h-[130px]`}
+              className={`${bg} flex flex-col justify-between px-5 pt-6 pb-4 min-h-[130px] transition-transform duration-300 hover:-translate-y-1 block`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={icon} alt="" className="w-10 h-10 object-contain" />
@@ -103,8 +104,9 @@ export default function About() {
                 </p>
               </div>
             </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   )
