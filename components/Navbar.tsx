@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import { motion } from 'motion/react'
 
 const links = [
   { label: 'projects',   href: '/#projects' },
@@ -12,26 +13,29 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-nav border-b border-dark uppercase bg-bg/85 backdrop-blur-[10px]">
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 h-nav border-b border-dark uppercase bg-bg/85 backdrop-blur-[10px]"
+      initial={{ y: -85, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+    >
       <div className="flex items-center h-full px-6 md:px-nav-pad max-w-[1440px] mx-auto">
         <Link href="/" className="text-nav-brand text-dark tracking-tight">
           stefania
         </Link>
 
-        {/* Desktop links */}
         <div className="ml-auto hidden md:flex items-center gap-12">
           {links.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
-              className="text-nav-link text-dark hover:opacity-60 transition-opacity"
+              className="text-nav-link text-dark relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-dark hover:after:w-full after:transition-[width] after:duration-300"
             >
               {label}
             </Link>
           ))}
         </div>
 
-        {/* Mobile hamburger */}
         <button
           className="ml-auto md:hidden flex flex-col gap-[5px] p-2"
           onClick={() => setOpen(o => !o)}
@@ -43,7 +47,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-bg border-b border-dark px-6 py-6 flex flex-col gap-6">
           {links.map(({ label, href }) => (
@@ -58,6 +61,6 @@ export default function Navbar() {
           ))}
         </div>
       )}
-    </nav>
+    </motion.nav>
   )
 }
