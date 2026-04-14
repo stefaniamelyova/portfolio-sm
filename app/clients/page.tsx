@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { PageHero, CoverCard } from '@/components/ui'
+import { PageHero, CoverCard, StaggerReveal, StaggerItem } from '@/components/ui'
 import { PROJECTS } from '@/lib/projects'
 
 const CLIENT_SLUGS = ['owow', 'ontdekfabriek', 'belco', 'waveme', 'reconnect', 'region-fruit']
@@ -13,18 +13,19 @@ export default function ClientsPage() {
       <div className="pt-nav">
         <PageHero title="clients" />
         <main className="max-w-[1440px] mx-auto px-6 md:px-section py-section">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {projects.map(project => (
-              <CoverCard
-                key={project.slug}
-                coverSrc={project.cover}
-                tags={project.tags}
-                fit={project.fit}
-                bg={project.bg}
-                href={`/work/${project.slug}`}
-              />
+              <StaggerItem key={project.slug}>
+                <CoverCard
+                  coverSrc={project.cover}
+                  tags={project.tags}
+                  fit={project.fit}
+                  bg={project.bg}
+                  href={`/work/${project.slug}`}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerReveal>
         </main>
       </div>
       <Footer />
