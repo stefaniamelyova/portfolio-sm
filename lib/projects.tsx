@@ -1,13 +1,9 @@
 import type React from 'react'
 import { PROJECT_COVERS, BAZINGA_ASSETS, FRUTELLA_ASSETS, WAVEME_ASSETS, KUDOS_ASSETS, ONTDEK_ASSETS, REGION_FRUIT_ASSETS, NB_LIMITED_ASSETS, BELCO_ASSETS, RECONNECT_ASSETS } from './assets'
 
-// ── Shared media type (used by TheProject + SplitSection) ─────────────────────
-
 export type MediaItem =
   | { type: 'image'; src: string; alt?: string }
   | { type: 'video'; src: string }
-
-// ── Section data types ────────────────────────────────────────────────────────
 
 export interface TheProjectData {
   media: [MediaItem, MediaItem]
@@ -24,8 +20,6 @@ export interface SplitSectionData {
   left: SplitColumnData
   right: SplitColumnData
 }
-
-// ── Project ───────────────────────────────────────────────────────────────────
 
 export interface Project {
   slug: string
@@ -165,10 +159,8 @@ export const PROJECTS: Project[] = [
     customSection: (
       <section className="relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-section pb-section flex flex-col gap-6">
-          {/* Full-width UI overview */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={WAVEME_ASSETS.ui} alt="WaveMe UI overview" className="w-full" draggable={false} />
-          {/* Side-by-side: screens video + screens image */}
           <div className="flex gap-6">
             <div className="flex-1 overflow-hidden">
               <video
@@ -271,7 +263,6 @@ export const PROJECTS: Project[] = [
       <section className="relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-section pb-section flex flex-col gap-6">
 
-          {/* Design column + cards video side by side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
               <h2 className="text-subheading uppercase text-dark">Design</h2>
@@ -296,11 +287,9 @@ export const PROJECTS: Project[] = [
             </div>
           </div>
 
-          {/* Full-width UI image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={KUDOS_ASSETS.ui} alt="Kudos UI" className="w-full" draggable={false} />
 
-          {/* Full-width homescreen recording */}
           <video
             src={KUDOS_ASSETS.homescreen}
             autoPlay
@@ -351,11 +340,9 @@ export const PROJECTS: Project[] = [
       <section className="relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-section pb-section flex flex-col gap-6">
 
-          {/* Full-width UI */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={BELCO_ASSETS.ui} alt="Belco Alliance UI" className="w-full" draggable={false} />
 
-          {/* Two images side by side */}
           <div className="flex gap-6">
             <div className="flex-1 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -408,7 +395,6 @@ export const PROJECTS: Project[] = [
       <section className="relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-section pb-section flex flex-col gap-6">
 
-          {/* Design column + web gallery video side by side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div>
               <h2 className="text-subheading uppercase text-dark">Design</h2>
@@ -433,7 +419,6 @@ export const PROJECTS: Project[] = [
             </div>
           </div>
 
-          {/* Full-width UI image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={ONTDEK_ASSETS.ui} alt="EcoBuild UI" className="w-full" draggable={false} />
 
@@ -512,11 +497,9 @@ export const PROJECTS: Project[] = [
       <section className="relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-section pb-section flex flex-col gap-6">
 
-          {/* Full-width showcase image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={REGION_FRUIT_ASSETS.img3} alt="Region Fruit brand showcase" className="w-full" draggable={false} />
 
-          {/* Two mockup videos side by side */}
           <div className="flex gap-6">
             <div className="flex-1 overflow-hidden">
               <video

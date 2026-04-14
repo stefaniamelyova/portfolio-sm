@@ -13,7 +13,6 @@ export default function Footer() {
         */}
         <div className="w-full flex items-start justify-between md:contents">
 
-          {/* Nav column */}
           <div className="flex-1 flex flex-col gap-2">
             <p className="text-footer uppercase text-light-purple">
               Copyright © Stefania Melyova
@@ -31,7 +30,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Decorative illustration — top-right on mobile, leftmost on desktop */}
           <div className="flex-none md:order-first">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -44,7 +42,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Contact column */}
         <div className="flex-1 flex flex-col gap-2">
           <p className="text-footer uppercase text-light-purple">
             Contact

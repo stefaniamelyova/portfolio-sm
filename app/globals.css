@@ -23,8 +23,6 @@
   --spacing-header:   91px;
 }
 
-/* ── Typography utilities ────────────────────────────────────────────────── */
-
 @utility text-title {
   font-size: clamp(2rem, 5vw, 3.75rem);
   font-weight: 900;
@@ -122,8 +120,6 @@
   filter: brightness(0) invert(1) sepia(1) hue-rotate(220deg) saturate(8) brightness(0.9);
 }
 
-/* ── Custom Cursor ───────────────────────────────────────────────────────── */
-
 /* cursor: none only when JS has confirmed the custom cursor is running */
 @media (pointer: fine) {
   .custom-cursor-active body,
@@ -150,7 +146,6 @@
   background: var(--accent);
 }
 
-/* Dot: always-morphing ink blob, grows on hover */
 .cursor-dot {
   z-index: 10000;
   width: 9px;
@@ -177,7 +172,6 @@
   100% { border-radius: 68% 32% 42% 58% / 64% 38% 62% 36%; }
 }
 
-/* Trail: smaller irregular drop lagging behind, fades on hover */
 .cursor-trail {
   z-index: 9999;
   width: 5px;
@@ -191,8 +185,6 @@
 .cursor-trail.is-hovering {
   opacity: 0;
 }
-
-/* ── Base ────────────────────────────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
