@@ -25,8 +25,7 @@ export default function CoverCard({ coverSrc, tags, href, fit = 'cover', bg = 'w
   )
 
   return (
-    <div className="flex flex-col">
-      {/* Cover — bordered area */}
+    <div className="flex flex-col transition-transform duration-300 hover:-translate-y-1">
       {href ? (
         <Link
           href={href}
@@ -40,7 +39,6 @@ export default function CoverCard({ coverSrc, tags, href, fit = 'cover', bg = 'w
         </div>
       )}
 
-      {/* Tag strip — sits below the border, no background (bg-bg bleeds through) */}
       {tags.length > 0 && (
         <div className="flex flex-wrap gap-2 pt-3">
           {tags.map(tag => (

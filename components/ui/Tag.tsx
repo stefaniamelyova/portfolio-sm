@@ -15,7 +15,7 @@ export default function Tag({ label, dark, pill }: TagProps) {
   }
   return (
     <span
-      className={`inline-block text-label uppercase px-3 py-2 ${
+      className={`inline-block text-label uppercase px-3 py-2 transition-transform duration-200 hover:-translate-y-0.5 cursor-default ${
         dark ? 'bg-dark text-bg' : 'bg-bg text-accent'
       }`}
     >
